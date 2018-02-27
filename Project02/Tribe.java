@@ -1,20 +1,17 @@
 package Project02;
-import java.util.Collection;
-import java.util.Collections;
-import java.io.StringBufferInputStream;
 import java.util.ArrayList;
-import Project02.People;
-import Project02.PeopleType;
-import Project02.SchaperWarrior;
-import Project02.SchaperWizard;
 
 public class Tribe
 {
-    private String nationName;
-    private String tribeName;
-    private int tribeLifePoints;
-    private ArrayList<People> members = new ArrayList<>();
-    private ArrayList<People> livingMembers = new ArrayList<>();
+    protected String nationName;
+    protected String tribeName;
+    protected int tribeLifePoints;
+    protected ArrayList<People> members = new ArrayList<>();
+    protected ArrayList<People> livingMembers = new ArrayList<>();
+
+    public Tribe() {
+
+    }
 
     public Tribe(String nation, String tribe, int lifePoints)
     {

@@ -1,7 +1,5 @@
 package Project02;
 
-import Project02.Nation;
-import Project02.People;
 import java.util.*;
 
 public class World
@@ -66,9 +64,9 @@ public class World
 
     public void createWorld()
     {
-        allNations.add(new Nation("Idiots", (worldLifePoints / 2)));
+        allNations.add(new JordanNation("JordanNation", (worldLifePoints / 2)));
         numberOfNations++;
-        allNations.add(new Nation("Minions", (worldLifePoints) / 2));
+        allNations.add(new GFNation("GFNation", (worldLifePoints) / 2));
         numberOfNations++;
     }
 

@@ -1,19 +1,15 @@
 package Project02;
 
-import java.util.Collection;
-import java.util.Collections;
 import java.util.ArrayList;
-import Project02.Tribe;
-import Project02.People;
 
 public class Nation
 {
-    private int nationLifePoints;
+    protected int nationLifePoints;
     public static int nationCount = 0;
-    private String nationName;
-    private ArrayList<Tribe> tribes = new ArrayList<>();
-    private ArrayList<People> population = new ArrayList<>();
-    private ArrayList<People> livingPopulation = new ArrayList<>();
+    protected String nationName;
+    protected ArrayList<Tribe> tribes = new ArrayList<>();
+    protected ArrayList<People> population = new ArrayList<>();
+    protected ArrayList<People> livingPopulation = new ArrayList<>();
 
 
     public Nation(String name, int lifePoints)
@@ -27,6 +23,9 @@ public class Nation
         }
         population.addAll(getNationPopulation());
         livingPopulation.addAll(population);
+    }
+
+    public Nation() {
     }
 
 

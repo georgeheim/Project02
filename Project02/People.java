@@ -1,7 +1,5 @@
 package Project02;
 
-import Project02.PeopleType;
-
 public abstract class People
 {
     private String personName;
@@ -12,6 +10,7 @@ public abstract class People
     private int myLifePoints;
     private boolean dead;
 
+    public People() {}
 
     public People(String nation, String tribe, PeopleType person, int lifePoints)
     {
