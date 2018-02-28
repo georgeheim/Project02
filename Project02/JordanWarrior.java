@@ -6,7 +6,7 @@ import Project02.PeopleType;
 
 public class JordanWarrior extends People
 {
-    SchaperWarrior(String nation, String tribe, int lifePoints)
+    JordanWarrior(String nation, String tribe, int lifePoints)
     {
         super(nation, tribe, PeopleType.warrior, lifePoints);
         myDescription = "\tJordan Warrior";

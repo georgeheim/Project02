@@ -6,7 +6,7 @@ import Project02.PeopleType;
 
 public class JordanWizard extends Project02.People
 {
-    SchaperWizard(String nation, String tribe, int lifePoints)
+    JordanWizard(String nation, String tribe, int lifePoints)
     {
         super(nation, tribe, PeopleType.wizard, lifePoints);
         myDescription = "\tJordan Wizard";
@@ -38,7 +38,7 @@ public class JordanWizard extends Project02.People
         //if from another nation, want to do something else
         else {
             int points;
-            int points = this.getLifePoints() - otherPerson.getLifePoints();
+            points = this.getLifePoints() - otherPerson.getLifePoints();
             if(points > 0) {
                if(otherPerson.getType() == PeopleType.warrior) {
                   lifePoints =  (int) otherPerson.getLifePoints(); //attack bc have more points
