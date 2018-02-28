@@ -11,7 +11,7 @@ public class FrancisWizard extends People {
         int lifePoints = 0;
         if (this.getNation() != otherPerson.getNation()) {
             if (this.getType() != otherPerson.getType()) {
-                if (this.getLifePoints() > otherPerson.getLifePoints()) 
+                if (this.getLifePoints() > otherPerson.getLifePoints())
 			{
 			    lifePoints = -this.getLifePoints()/4;
                 }
@@ -29,9 +29,10 @@ public class FrancisWizard extends People {
 	    {
 	     	lifePoints = 0;
 
-            } 
+            }
         }
         return lifePoints;
     }
 
+ }
 }
