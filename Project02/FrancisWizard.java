@@ -11,28 +11,35 @@ public class FrancisWizard extends People {
         int lifePoints = 0;
         if (this.getNation() != otherPerson.getNation()) {
             if (this.getType() != otherPerson.getType()) {
-                if (this.getLifePoints() > otherPerson.getLifePoints())
-			{
-			    lifePoints = -this.getLifePoints()/4;
-                }
+                if (this.getLifePoints() < otherPerson.getLifePoints())
+			             {
+			                  lifePoints = -this.getLifePoints()/4;
+                   }
                 else {
                     lifePoints = (int) (this.getLifePoints()/2);
                 }
             }
+            else {
+                if(this.getLifePoints() < otherPerson.getLifePoints()) {
+                      lifePoints = -this.getLifePoints()/2;
+                }
+                else {
+                    lifePoints = this.getLifePoints();
+                }
+            }
+        }
         else
        	{
-	    if (otherPerson.getLifePoints() < this.getLifePoints())
-	    {
-	        lifePoints = (int) (this.getLifePoints() - otherPerson.getLifePoints() / 4);
+	         if (otherPerson.getLifePoints() < this.getLifePoints())
+	          {
+	             lifePoints = (int) -(this.getLifePoints() - otherPerson.getLifePoints() / 4);
             }
-	    else
-	    {
-	     	lifePoints = 0;
-
+	         else
+	          {
+	     	       lifePoints = 0;
             }
         }
         return lifePoints;
-    }
 
  }
 }
