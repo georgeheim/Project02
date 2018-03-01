@@ -20,7 +20,7 @@ public class FrancisWarrior extends People {
             }
             else {
                 if (this.getLifePoints() > otherPerson.getLifePoints()) {
-                    lifePoints = -otherPerson.getLifePoints()/2;
+                    lifePoints = otherPerson.getLifePoints()/2;
                 } else {
                     lifePoints = -this.getLifePoints()/2;
                 }
