@@ -24,10 +24,6 @@ public class JordanWarrior extends People
                 {
                     lifePoints = -(int)((this.getLifePoints() - otherPerson.getLifePoints()) / 4);
                 }
-                else
-                { //doesn't attack if diff tribe, but also doesn't give life
-                    lifePoints = 0;
-                }
             }
         }
         else

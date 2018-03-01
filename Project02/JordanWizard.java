@@ -19,19 +19,11 @@ public class JordanWizard extends Project02.People
             if (otherPerson.getLifePoints() < this.getLifePoints()) {
                 lifePoints = (int) -(this.getLifePoints() - otherPerson.getLifePoints() / 2);
               } //from my tribe, give them things
-            else
-              { //if i have less life points, don't want to give any
-                lifePoints = 0;
-              }
             }
           else {
             if (otherPerson.getLifePoints() < this.getLifePoints()) {
               //wizard is nicer, so gives lifePoints to person from another tribe
               lifePoints = -(int) (this.getLifePoints() - otherPerson.getLifePoints() / 4);
-            }
-            else
-            { //if i have less points, don't want to give any
-              lifePoints = 0;
             }
           }
         }
@@ -63,4 +55,3 @@ public class JordanWizard extends Project02.People
     }
 
 }
-
