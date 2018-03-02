@@ -9,19 +9,21 @@ public class GeorgeWarrior extends People {
 
     public int encounterStrategy(People otherPerson) {
         int lifePoints = 0;
-        if (this.getNation() != otherPerson.getNation()) {
-            if (this.getType() == otherPerson.getType()) {
-                if (this.getLifePoints() > otherPerson.getLifePoints()) {
+        int points = this.getLifePoints - otherPerson.getLifePoints;
+        if (this.getNation() != otherPerson.getNation()) { // If from another nation
+            if (this.getType() == otherPerson.getType()) { // If warrior
+                if (points > 0) { // If I have more health
                     lifePoints = otherPerson.getLifePoints()/2;
                 }
-                else {
+                else { // If they have more health
                     lifePoints = this.getLifePoints()/2;
                 }
             }
-            else {
-                if (this.getLifePoints() > otherPerson.getLifePoints()) {
+            else { // If wizard
+                if (points > 0) { // If I have more health
                     lifePoints = otherPerson.getLifePoints();
-                } else {
+                }
+                else { // If they have more health
                     lifePoints = this.getLifePoints();
                 }
             }
