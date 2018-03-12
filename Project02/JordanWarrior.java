@@ -22,7 +22,7 @@ public class JordanWarrior extends People
             {
                 if(otherPerson.getTribe() == this.getTribe())
                 {
-                    lifePoints = -(int)((this.getLifePoints() - otherPerson.getLifePoints()) / 4);
+                    lifePoints = -(int)((this.getLifePoints() - otherPerson.getLifePoints()) / 2);
                 }
             }
         }
