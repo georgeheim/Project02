@@ -9,6 +9,7 @@ public abstract class People
     protected String myDescription;
     private int myLifePoints;
     private boolean dead;
+    public EncounterStrategy strategy;
 
     public People() {}
 
@@ -62,10 +63,17 @@ public abstract class People
         myLifePoints += points;
     }
 
+    /*public void changeStrategy(EncounterStrategy s)
+    {
+	     strategy = s;
+    } */
 
-    public abstract int encounterStrategy(People otherPerson);
+    public int encounterStrategy(People otherPerson)
+    {
+	     return strategy.strategy(this, otherPerson);
+    }
 
-
+    //public abstract int encounterStrategy(People otherPerson);
 
     public String toString()
     {
@@ -73,4 +81,3 @@ public abstract class People
         return result;
     }
 }
-
