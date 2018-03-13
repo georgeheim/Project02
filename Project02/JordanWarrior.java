@@ -11,5 +11,6 @@ public class JordanWarrior extends People
         super(nation, tribe, PeopleType.warrior, lifePoints);
         myDescription = "\tJordan Warrior";
         strategy = new JordanWarriorStrategy();
+        }
     }
 }

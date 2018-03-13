@@ -63,10 +63,10 @@ public abstract class People
         myLifePoints += points;
     }
 
-    /*public void changeStrategy(EncounterStrategy s)
+    public void changeStrategy(EncounterStrategy s)
     {
 	     strategy = s;
-    } */
+    } 
 
     public int encounterStrategy(People otherPerson)
     {
