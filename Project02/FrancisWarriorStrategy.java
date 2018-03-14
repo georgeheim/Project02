@@ -9,10 +9,10 @@ public class FrancisWarriorStrategy implements EncounterStrategy {
     if (me.getNation() != otherPerson.getNation()) {
         if (me.getType() == otherPerson.getType()) {
             if (me.getLifePoints() > otherPerson.getLifePoints()) {
-                lifePoints = otherPerson.getLifePoints()/2;
+                lifePoints = otherPerson.getLifePoints();
             }
             else {
-                lifePoints = me.getLifePoints()/4;
+                lifePoints = me.getLifePoints()/2;
             }
         }
         else {
