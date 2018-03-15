@@ -1,5 +1,7 @@
 package Project02;
 
+import java.util.*;
+
 public abstract class People
 {
     private String personName;
@@ -63,10 +65,9 @@ public abstract class People
         myLifePoints += points;
     }
 
-    public void changeStrategy(EncounterStrategy s)
+    /*public void changeStrategy()
     {
-	     strategy = s;
-    } 
+    } */
 
     public int encounterStrategy(People otherPerson)
     {

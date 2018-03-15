@@ -13,8 +13,6 @@ public class World
     Random generator;
     ArrayList<People> worldCreatedPeople = new ArrayList<>();
 
-
-
     public World()
     {
         // seed for psuedo-random number generator
@@ -152,6 +150,7 @@ public class World
         // Both people lose 1 life point per encounter due to aging
         worldCreatedPeople.get(person1).modifyLifePoints((-1));
         worldCreatedPeople.get(person2).modifyLifePoints((-1));
+
 
     }
 
