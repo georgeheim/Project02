@@ -65,16 +65,11 @@ public abstract class People
         myLifePoints += points;
     }
 
-    /*public void changeStrategy()
-    {
-    } */
-
     public int encounterStrategy(People otherPerson)
     {
 	     return strategy.strategy(this, otherPerson);
     }
 
-    //public abstract int encounterStrategy(People otherPerson);
 
     public String toString()
     {

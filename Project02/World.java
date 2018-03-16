@@ -142,6 +142,11 @@ public class World
 
         }
 
+        if(p1damage < 0)
+            worldCreatedPeople.get(person1).modifyLifePoints(p1damage);
+        if(p2damage < 0)
+            worldCreatedPeople.get(person2).modifyLifePoints(p2damage);
+        
         // record the damage: positive damage should be subtracted for persons lifePoint
         // negative damage is added to persons life points
         worldCreatedPeople.get(person1).modifyLifePoints((-p2damage));
