@@ -29,7 +29,7 @@ public class FrancisWizardStrategy implements EncounterStrategy {
       {
          if (otherPerson.getLifePoints() < me.getLifePoints())
           {
-             lifePoints = (int) -(me.getLifePoints() - otherPerson.getLifePoints() / 4);
+             lifePoints = (int) -((me.getLifePoints() - otherPerson.getLifePoints()) / 4);
           }
          else
           {

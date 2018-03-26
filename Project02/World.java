@@ -13,8 +13,6 @@ public class World
     Random generator;
     ArrayList<People> worldCreatedPeople = new ArrayList<>();
 
-
-
     public World()
     {
         // seed for psuedo-random number generator
@@ -144,6 +142,11 @@ public class World
 
         }
 
+        if(p1damage < 0)
+            worldCreatedPeople.get(person1).modifyLifePoints(p1damage);
+        if(p2damage < 0)
+            worldCreatedPeople.get(person2).modifyLifePoints(p2damage);
+        
         // record the damage: positive damage should be subtracted for persons lifePoint
         // negative damage is added to persons life points
         worldCreatedPeople.get(person1).modifyLifePoints((-p2damage));
@@ -152,6 +155,7 @@ public class World
         // Both people lose 1 life point per encounter due to aging
         worldCreatedPeople.get(person1).modifyLifePoints((-1));
         worldCreatedPeople.get(person2).modifyLifePoints((-1));
+
 
     }
 

@@ -1,28 +1,33 @@
 package Project02;
-
 import Project02.People;
 
 public class GeorgeWizardStrategy implements EncounterStrategy {
 
-    public int strategy(People me, People otherPerson){
+    public int strategy(People me, People otherPerson) {
       int lifePoints = 0;
-      int points = me.getLifePoints() - otherPerson.getLifePoints();
-      if (me.getNation() != otherPerson.getNation()) { // If from enemy nation
-          if (me.getType() != otherPerson.getType()) { // If opponent is warrior
-              if (points > 0) { // If I have more health
+      int difference = me.getLifePoints() - otherPerson.getLifePoints();
+      if (me.getNation() != otherPerson.getNation()) { // Is from enemy nation
+          if (me.getType() != otherPerson.getType()) { // Is a warrior
+              if (difference > 0) { // I have more health
                   lifePoints = otherPerson.getLifePoints();
               }
-              else {
-                  lifePoints = me.getLifePoints()/2;
+              else { // They have more health
+                  lifePoints = me.getLifePoints();
               }
           }
-          else { // If opponent is wizard
-              if (points > 0) { // If I have more health
+          else { // Is a wizard
+              if (difference > 0) { // I have more health
                   lifePoints = otherPerson.getLifePoints();
+              }
+          }
+      }
+      else { // Is from my nation
+          if (difference > 0) { // I have more health
+              if (me.getTribe() == otherPerson.getTribe()) { // Is from my tribe
+                  lifePoints = -(difference)/2; // Balance life totals
               }
           }
       }
       return lifePoints;
   }
-
 }
