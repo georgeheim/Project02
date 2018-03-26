@@ -36,9 +36,10 @@ public class World implements Subject
                 worldSurvivingPeople.clear();
                 worldSurvivingPeople.addAll(getWorldSurvivingPeople());
                 survivingNations.addAll(getSurvivingNations());
-                if ((worldSurvivingPeople.size() >= 2) && (survivingNations.size() > 1) )
+                if ((worldSurvivingPeople.size() >= 2) && (survivingNations.size() > 1) ){
                     playOneRound(worldSurvivingPeople);
-                else
+                    worldChanged();
+                } else
                 {
                     System.out.print("Game is over! Winning Nation is: ");
                     if (survivingNations.size() == 0)
@@ -159,7 +160,6 @@ public class World implements Subject
         worldCreatedPeople.get(person1).modifyLifePoints((-1));
         worldCreatedPeople.get(person2).modifyLifePoints((-1));
 
-        worldChanged();
     }
 
 

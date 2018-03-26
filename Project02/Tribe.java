@@ -20,9 +20,9 @@ public class Tribe
         tribeLifePoints = lifePoints;
         for(int i = 0; i < 5; i++)
             if(i % 2 == 0)
-                members.add(new SchaperWarrior(nationName, tribeName, tribeLifePoints / 5));
+                members.add(new SchaperWarrior(nationName, tribeName, tribeLifePoints / 5, new SchaperWarriorStrategy()));
             else
-                members.add(new SchaperWizard(nationName, tribeName, tribeLifePoints / 5));
+                members.add(new SchaperWizard(nationName, tribeName, tribeLifePoints / 5, new SchaperWizardStrategy()));
         for(int i = 0; i < members.size(); i++)
             livingMembers.addAll(members);
     }

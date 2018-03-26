@@ -1,9 +1,12 @@
 package Project02;
+import Project02.People;
+import Project02.World;
+import Project02.Nation;
 
 import java.util.*;
 
 public class JordanNationDisplay implements Observer {
-  private ArrayList worldCreatedPeople;
+  private ArrayList<People> worldCreatedPeople;
   private World earth;
   private int numberOfRounds;
 
@@ -19,13 +22,16 @@ public class JordanNationDisplay implements Observer {
   }
 
   public void display() {
-    for(int i = 0; i < worldCreatedPeople.size(); i++){
-      if(worldCreatedPeople.get(i).getNation.equals("JordanNation")) {
+    int count = 0;
+    for(Integer i = 0; i < worldCreatedPeople.size(); i++){
+      if(worldCreatedPeople.get(i).getNation().equals("JordanNation")) {
           if(worldCreatedPeople.get(i).getLifePoints() > 0) {
               System.out.println(worldCreatedPeople.get(i));
+              count++;
           }
       }
     }
+    System.out.println("JordanNation has " + count + " people left");
   }
 
 
