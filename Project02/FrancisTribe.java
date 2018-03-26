@@ -9,9 +9,9 @@ public class FrancisTribe extends Tribe {
         tribeLifePoints = lifePoints;
         for(int i = 0; i < 20; i++)
             if(i % 2 == 0)
-                members.add(new FrancisWarrior(nationName, tribeName, tribeLifePoints / 20));
+                members.add(new FrancisWarrior(nationName, tribeName, tribeLifePoints / 20, new FrancisWarriorStrategy()));
             else
-                members.add(new FrancisWizard(nationName, tribeName, tribeLifePoints / 20));
+                members.add(new FrancisWizard(nationName, tribeName, tribeLifePoints / 20, new FrancisWizardStrategy()));
         for(int i = 0; i < members.size(); i++)
             livingMembers.addAll(members);
     }

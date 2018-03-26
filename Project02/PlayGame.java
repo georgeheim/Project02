@@ -9,6 +9,7 @@ public class PlayGame
     public PlayGame()
     {
         World earth = new World();
+        JordanNationDisplay jordanNationDisplay = new JordanNationDisplay(earth);
         earth.war();
     }
 

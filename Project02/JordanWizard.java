@@ -6,10 +6,9 @@ import Project02.PeopleType;
 
 public class JordanWizard extends Project02.People
 {
-    JordanWizard(String nation, String tribe, int lifePoints)
+    JordanWizard(String nation, String tribe, int lifePoints, EncounterStrategy strategy)
     {
-        super(nation, tribe, PeopleType.wizard, lifePoints);
+        super(nation, tribe, PeopleType.wizard, lifePoints, strategy);
         myDescription = "\tJordan Wizard";
-        strategy = new JordanWizardStrategy();
     }
 }

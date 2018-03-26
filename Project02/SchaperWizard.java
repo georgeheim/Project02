@@ -6,11 +6,10 @@ import Project02.PeopleType;
 
 public class SchaperWizard extends Project02.People
 {
-    SchaperWizard(String nation, String tribe, int lifePoints)
+    SchaperWizard(String nation, String tribe, int lifePoints, EncounterStrategy strategy)
     {
-        super(nation, tribe, PeopleType.wizard, lifePoints);
+        super(nation, tribe, PeopleType.wizard, lifePoints, strategy);
         myDescription = "\tSchaper Wizard";
-        strategy = new SchaperWizardStrategy();
     }
 
 }

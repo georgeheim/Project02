@@ -15,7 +15,7 @@ public abstract class People
 
     public People() {}
 
-    public People(String nation, String tribe, PeopleType person, int lifePoints)
+    public People(String nation, String tribe, PeopleType person, int lifePoints, EncounterStrategy strategy)
     {
         myNation = nation;
         myTribe = tribe;
@@ -23,6 +23,7 @@ public abstract class People
         myDescription = me.getDescription();
         myLifePoints = lifePoints;
         dead = false;
+        strategy = strategy;
     }
 
     public void setDead()

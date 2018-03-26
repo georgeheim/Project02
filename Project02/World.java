@@ -2,7 +2,7 @@ package Project02;
 
 import java.util.*;
 
-public class World
+public class World implements Subject
 {
     private final int worldLifePoints = 4000;
     private final int numberOfRounds = 40;
@@ -12,6 +12,7 @@ public class World
 
     Random generator;
     ArrayList<People> worldCreatedPeople = new ArrayList<>();
+    private ArrayList observers;
 
     public World()
     {
@@ -20,6 +21,8 @@ public class World
         generator = new Random(seed.getTime());
         createWorld();
         worldCreatedPeople.addAll(getWorldCreatedPopulation());
+        observers = new ArrayList();
+
     }
 
     public void war()
@@ -146,7 +149,7 @@ public class World
             worldCreatedPeople.get(person1).modifyLifePoints(p1damage);
         if(p2damage < 0)
             worldCreatedPeople.get(person2).modifyLifePoints(p2damage);
-        
+
         // record the damage: positive damage should be subtracted for persons lifePoint
         // negative damage is added to persons life points
         worldCreatedPeople.get(person1).modifyLifePoints((-p2damage));
@@ -156,7 +159,7 @@ public class World
         worldCreatedPeople.get(person1).modifyLifePoints((-1));
         worldCreatedPeople.get(person2).modifyLifePoints((-1));
 
-
+        worldChanged();
     }
 
 
@@ -175,6 +178,28 @@ public class World
         }
     }
 
+    //OBSERVER DESIGN IMPLEMENTATION
+    public void registerObserver(Observer o) {
+		    observers.add(o);
+	  }
+
+    public void removeObserver(Observer o) {
+		 int i = observers.indexOf(o);
+		 if (i >= 0) {
+			observers.remove(i);
+		 }
+	  }
+
+    public void notifyObservers() {
+		    for (int i = 0; i < observers.size(); i++) {
+			       Observer observer = (Observer)observers.get(i);
+			       observer.update(worldCreatedPeople, numberOfRounds);
+		     }
+	  }
+
+    public void worldChanged() {
+      notifyObservers();
+    }
 
 
 }
