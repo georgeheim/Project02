@@ -1,31 +1,38 @@
 package Project02;
+import Project02.People;
+import Project02.World;
+import Project02.Nation;
 
 import java.util.*;
 
-public class FrancisDisplay implements Observer, DisplayElement {
-    private float temp;
-    private WeatherData weatherData;
+public class FrancisDisplay implements Observer {
+    private ArrayList<People> worldCreatedPeople;
+    private World earth;
+    private int numberOfRounds;
 
-    public FrancisDisplay(WeatherData weatherData) {
-	this.weatherData = weatherData;
-	weatherData.registerObserver(this);
+    public FrancisDisplay(World earth) {
+        this.earth = earth;
+        earth.registerObserver(this);
     }
 
-    public void update(float temp, float humidity, float pressure) {
-	this.temp = temp;
-	display();
+    public void update(ArrayList<People> worldCreatedPeople, int numberOfRounds){
+        this.worldCreatedPeople = worldCreatedPeople;
+        this.numberOfRounds = numberOfRounds;
+        display();
     }
 
     public void display() {
-	if(temp < 35){
-            System.out.println("There may be a chance of snow!");
+        int count = 0;
+        for(Integer i = 0; i < worldCreatedPeople.size(); i++){
+            if(worldCreatedPeople.get(i).getNation().equals("GFNation")) {
+                if(worldCreatedPeople.get(i).getLifePoints() > 0) {
+                    System.out.println(worldCreatedPeople.get(i));
+                    count++;
+                }
+            }
         }
-        else if(temp >= 35 < 50){
-            System.out.println("It's getting warmer out.");
-        }
-        else {
-            System.out.println("No need for longsleeves!");
-        }
+        System.out.println("GFNation has " + count + " people left" + );
     }
+
 
 }
