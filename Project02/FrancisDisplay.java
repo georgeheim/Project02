@@ -31,7 +31,7 @@ public class FrancisDisplay implements Observer {
                 }
             }
         }
-        System.out.println("GFNation has " + count + " people left" + );
+        System.out.println("GFNation has " + count + " people left");
     }
 
 
