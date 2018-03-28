@@ -32,7 +32,6 @@ public class GeorgeDisplay implements Observer {
                 }
             }
         }
-        System.out.println("GFNation has " + peopleCount + " people left" + );
+        System.out.println("GFNation has " + peopleCount + " people left");
     }
-
-
+}

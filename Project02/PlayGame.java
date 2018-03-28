@@ -10,6 +10,8 @@ public class PlayGame
     {
         World earth = new World();
         JordanNationDisplay jordanNationDisplay = new JordanNationDisplay(earth);
+        FrancisDisplay francisDisplay = new FrancisDisplay(earth);
+        GeorgeDisplay georgeDisplay = new GeorgeDisplay(earth);
         earth.war();
     }
 
