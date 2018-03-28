@@ -25,13 +25,15 @@ public class FrancisDisplay implements Observer {
         int count = 0;
         for(Integer i = 0; i < worldCreatedPeople.size(); i++){
             if(worldCreatedPeople.get(i).getNation().equals("GFNation")) {
-                if(worldCreatedPeople.get(i).getLifePoints() > 0) {
-                    System.out.println(worldCreatedPeople.get(i));
-                    count++;
-                }
+		if(worldCreatedPeople.get(i).getTribe().equals("FrancisTribe")){
+		    if(worldCreatedPeople.get(i).getLifePoints() > 0) {
+			System.out.println(worldCreatedPeople.get(i));
+			count++;
+		    }
+		}
             }
         }
-        System.out.println("GFNation has " + count + " people left");
+        System.out.println("FrancisTribe  has " + count + " people left");
     }
 
 
