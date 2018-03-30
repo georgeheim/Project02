@@ -22,15 +22,13 @@ public class GeorgeDisplay implements Observer {
     }
 
     public void display() {
-	roundNumber++;
-        System.out.println("Round " + roundNumber);
         System.out.println("The current survivors from George's tribe are: ");
         int peopleCount = 0;
         for(Integer i = 0; i < worldCreatedPeople.size(); i++){
             if(worldCreatedPeople.get(i).getTribe().equals("GeorgeTribe")) {
                 if(worldCreatedPeople.get(i).getLifePoints() > 0) {
                     System.out.println(worldCreatedPeople.get(i));
-                    peopleCount++;
+		    peopleCount++;
                 }
             }
         }
